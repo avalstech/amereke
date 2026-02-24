@@ -44,11 +44,11 @@ export function Footer() {
         <Separator className="my-8" />
 
         <div className="flex flex-col gap-2 text-xs text-slate-600 md:flex-row md:items-center md:justify-between">
-          <div>© {new Date().getFullYear()} Amareke. All rights reserved.</div>
+          <div>© 2026 Amareke. All rights reserved.</div>
           <div className="flex gap-4">
-            <span>Privacy</span>
-            <span>Terms</span>
-            <span>Security</span>
+            <Link href="/company#privacy" className="hover:text-slate-900">Privacy</Link>
+            <Link href="/company#terms" className="hover:text-slate-900">Terms</Link>
+            <Link href="/company#security" className="hover:text-slate-900">Security</Link>
           </div>
         </div>
       </div>

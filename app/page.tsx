@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Section } from "@/components/site/Section"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -6,7 +5,7 @@ import { Screenshot } from "@/components/site/Screenshot"
 import { FeatureCard } from "@/components/site/FeatureCard"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { BarChart3, CalendarClock, Layers3, MessageSquareText, Sparkles, Wand2 } from "lucide-react"
+import { Layers3, MessageSquareText, Sparkles } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -61,9 +60,9 @@ export default function HomePage() {
 
       <Section className="bg-slate-50">
         <div className="grid gap-6 md:grid-cols-3">
-          <FeatureCard title="Creator Studio" description="Hooks, scripts, captions, and repurpose packs." Icon={Wand2} />
-          <FeatureCard title="Distribution Engine" description="Cross-platform variants, scheduling, governance." Icon={CalendarClock} />
-          <FeatureCard title="Growth Intelligence" description="Content scoring and what to post next." Icon={BarChart3} />
+          <FeatureCard title="Creator Studio" description="Hooks, scripts, captions, and repurpose packs." icon="wand" />
+          <FeatureCard title="Distribution Engine" description="Cross-platform variants, scheduling, governance." icon="calendar" />
+          <FeatureCard title="Growth Intelligence" description="Content scoring and what to post next." icon="chart" />
         </div>
       </Section>
 

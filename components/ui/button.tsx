@@ -2,12 +2,25 @@ import * as React from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonBaseProps = {
   variant?: "default" | "secondary" | "outline" | "ghost"
   size?: "sm" | "md" | "lg"
-  asChild?: boolean
-  href?: string
+  className?: string
 }
+
+type ButtonAsButtonProps = ButtonBaseProps & 
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    asChild?: false
+    href?: never
+  }
+
+type ButtonAsLinkProps = ButtonBaseProps & {
+  asChild: true
+  href: string
+  children: React.ReactNode
+}
+
+type Props = ButtonAsButtonProps | ButtonAsLinkProps
 
 export function Button({
   className,
@@ -45,6 +58,6 @@ export function Button({
   }
 
   return (
-    <button className={cn(base, v, s, className)} {...props} />
+    <button type="button" className={cn(base, v, s, className)} {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)} />
   )
 }
