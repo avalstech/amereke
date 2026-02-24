@@ -2,18 +2,25 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useReveal } from "@/components/site/useReveal"
-import type { LucideIcon } from "lucide-react"
+import { Wand2, CalendarClock, BarChart3 } from "lucide-react"
+
+const icons = {
+  wand: Wand2,
+  calendar: CalendarClock,
+  chart: BarChart3,
+} as const
 
 export function FeatureCard({
   title,
   description,
-  Icon
+  icon
 }: {
   title: string
   description: string
-  Icon: LucideIcon
+  icon: keyof typeof icons
 }) {
   const ref = useReveal<HTMLDivElement>()
+  const Icon = icons[icon]
 
   return (
     <div ref={ref} className="reveal">
